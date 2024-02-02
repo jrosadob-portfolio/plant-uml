@@ -1,0 +1,18 @@
+@startuml blogging-context
+title "Title of the diagram"
+!include <C4/C4_Component>
+
+Component(comp1, "Component 1", "Technology 1", "Description 1") {
+  Component(comp2, "Component 2", "Technology 2", "Description 2") {
+    Component(comp3, "Component 3", "Technology 3", "Description 3") {
+      Component(comp4, "Component 4", "Technology 4", "Description 4")
+    }
+  }
+}
+
+ComponentDb(db1, "Database 1", "Technology 1", "ComponentDb")
+
+ComponentDb_Ext(db_ext1, "Database 1", "Technology 1", "ComponentDb_Ext") 
+
+ComponentQueue(db_q1, "Database 1", "Technology 1", "ComponentQueue") 
+@enduml

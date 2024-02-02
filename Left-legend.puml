@@ -1,0 +1,25 @@
+@startuml blogging-context
+title "Title of the diagram"
+!include <C4/C4_Component>
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+!include DEVICONS/msql_server.puml
+!include FONTAWESOME/users.puml
+
+Person(user, "Customer", "People that need products", $sprite="users")
+Container(spa, "SPA", "angular", "The main interface that the customer interacts with", $sprite="angular")
+Container(api, "API", "java", "Handles all business logic", $sprite="java")
+ContainerDb(db, "Database", "Microsoft SQL", "Holds product, order and invoice information", $sprite="msql_server")
+
+Rel(user, spa, "Uses")
+Rel(spa, api, "Uses")
+Rel_R(api, db, "Reads/Writes")
+
+SHOW_FLOATING_LEGEND()
+Lay_Distance(LEGEND(), user, 2)
+
+footer Drawn with PlantUML v. %version() and C4-PlantUML v. C4Version()
+@enduml

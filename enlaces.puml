@@ -1,0 +1,13 @@
+@startuml Basic Sample
+!include <C4/C4_Container>
+' Genere la imagen en formato SVG para poder usar los enlaces
+
+Person(admin, "Administrator", $sprite="person2", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md#hide_person_sprite-or-show_person_spritesprite")
+System_Boundary(c1, "Sample System", $link="https://github.com/plantuml-stdlib/C4-PlantUML") {
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", $descr="Allows users to compare multiple Twitter timelines", $link="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/LayoutOptions.md")
+}
+System(twitter, "Twitter", $link="https://github.com/plantuml-stdlib/C4-PlantUML")
+
+Rel(admin, web_app, "Uses", "HTTPS", $link="https://plantuml.com/link")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS", $link="https://plantuml.com/link")
+@enduml

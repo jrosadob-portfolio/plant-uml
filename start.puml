@@ -1,0 +1,6 @@
+@startuml blogging-context
+title "Title of the diagram"
+!include <C4/C4_Component>
+
+footer Drawn with PlantUML v. %version() and C4-PlantUML v. C4Version()
+@enduml

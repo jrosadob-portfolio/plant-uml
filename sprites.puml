@@ -1,0 +1,16 @@
+@startuml blogging-context
+title "Title of the diagram"
+!include <C4/C4_Component>
+
+Person(pB, "Sam", $sprite="person2")
+Person_Ext(pA, "Bob", $sprite="person")
+
+System_Ext(robB, "Robot A", $sprite="robot2")
+System_Ext(robA, "Robot B", $sprite="robot")
+
+Person
+
+SHOW_LEGEND()
+
+footer Drawn with PlantUML v. %version() and C4-PlantUML v. C4Version()
+@enduml

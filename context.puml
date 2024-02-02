@@ -1,0 +1,19 @@
+@startuml blogging-context
+title Blogging Context
+' !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+!include <C4/C4_Container>
+
+' Person
+Person(author, "Author", "Author of Blog Posts")
+System(blog, "Acme Blog", "Blog Web Application", "Spring Boot", "Java")
+
+Rel(author, blog, "Create Post", "HTTP")
+Rel(author, blog, "Update Post", "HTTP")
+
+Person_Ext(reader, "Reader", "https")
+Rel(reader, blog, "Read Post", "HTTPS")
+Rel(reader, blog, "Search Posts", "HTTPS")
+Rel(blog, reader, "Search Posts", "HTTPS")
+
+@enduml
+

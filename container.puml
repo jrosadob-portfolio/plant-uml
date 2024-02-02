@@ -1,0 +1,22 @@
+@startuml blogging-container
+!include <C4/C4_Container>
+
+Person(author, "AUTHOR")
+Person_Ext(reader, "Reader")
+
+System_Boundary(blog, "Acme Blog") {
+    Container(blogService, "Blog Service", "dropwizard")
+}
+' %version()
+
+' new C4-Plantuml version as text 
+' C4Version()
+
+' new C4-Plantuml version details (incl. PlantUML version) as table
+C4VersionDetails()
+
+' version functions used in e.g. footer
+footer drawn with PlantUML v. %version() and C4-PlantUML v. C4Version()
+@enduml
+
+
